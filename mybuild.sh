@@ -1,0 +1,1 @@
+./build-slides.py --outdir=build --title="Spatio-temporal terrain data analysis" --meta-description="Presentation for MEA801 course" --meta-author="Vaclav Petras" title.html template-slides.html plain-slides.html math-slides.html build-slides.html
