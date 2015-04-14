@@ -2,4 +2,4 @@
     --title="Mapping gradient fields of landform migration using an&nbsp;open science approach" \
     --meta-description="North Carolina State University, Department of Marine, Earth and Atmospheric Sciences, Graduate Student Seminar" \
     --meta-author="Vaclav Petras" \
-    title.html slides.html
+    title.html intro.html gradients.html open.html
