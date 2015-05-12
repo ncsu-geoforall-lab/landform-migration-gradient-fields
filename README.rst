@@ -1,44 +1,80 @@
-Templates and tools for creating lecture slides
-===============================================
+Mapping gradient fields of landform migration
+=============================================
 
-Getting the manual
+These are slides for presentation of mapping gradient fields of landform
+migration and spatio-temporal contour evolution project.
+
+
+Authors
+-------
+
+* Vaclav Petras, NCSU OSGeoREL
+* Helena Mitasova, NCSU OSGeoREL
+* Anna Petrasova, NCSU OSGeoREL
+
+
+Presentation online and at conferences
+--------------------------------------
+
+Slides online:
+
+* http://ncsu-osgeorel.github.io/landform-migration-gradient-fields/
+
+Events where some version of slides was used or will be used:
+
+* `Geomorphometry 2015 <http://geomorphometry.org/content/geomorphometry-2015-programme>`_
+* `MEAS 2014-2015 Seminar and Defense Series <http://www.meas.ncsu.edu/05-seminars.html>`_
+
+
+Presented software
 ------------------
+
+* https://github.com/ncsu-osgeorel/spatio-temporal-contour-evolution
+
+
+Building the slides
+-------------------
 
 To build the presentation slides with instructions::
 
-    ./build-slides.py title.html template-slides.html plain-slides.html math-slides.html build-slides.html
+    mkdir build
+    ./build.sh
 
-The open the file ``index.html``.
+The open the file ``build/index.html``.
+
 
 Building and publishing pages for this repository
 -------------------------------------------------
 
 Clone the repository::
 
-    git clone ... lecture-slides-template
+    git clone repository-url repository-name
 
-Clone again into different directory and switch to ``gh-pages`` branch
-in this clone::
+Create a build directory with gh-pages branch using a dedicated script.
+This will clone again into a subdirectory directory and switch
+to ``gh-pages`` branch in this clone.
 
-    git clone ... lecture-slides-template-pages
-    cd lecture-slides-template-pages
-    git checkout gh-pages
+::
 
-Navigate to the first clone and build pages::
+    ./get-gh-pages-branch.sh
 
-    cd ../lecture-slides-template
-    ./copy-common-files.py --dst-dir=../lecture-slides-template-pages/
-    ./build-slides.py --outdir=../lecture-slides-template-pages/ title.html template-slides.html plain-slides.html math-slides.html build-slides.html
+To build the presentation during writing use::
 
-Navigate to the other clone to commit and push::
+    ./build.sh
 
-    cd ../lecture-slides-template-pages
-    git add -A
-    git commit -am "new colors for the website"
-    git push
+Once your are ready to publish presentation as as website, use::
 
-About
------
+    ./publish.sh
+
+You have to commit and push all your local changes before that.
+
+Rarely, if you change the Reveal.js files, use::
+
+    ./copy-common-files.py --dst-dir=build
+
+
+About format of slides
+----------------------
 
 Presentation is using on Reveal.js HTML Presentation Framework.
 
