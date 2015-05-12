@@ -78,5 +78,9 @@ About format of slides
 
 Presentation is using on Reveal.js HTML Presentation Framework.
 
- * http://lab.hakim.se/reveal-js/#/
- * https://github.com/hakimel/reveal.js/
+* http://lab.hakim.se/reveal-js/#/
+* https://github.com/hakimel/reveal.js/
+
+Learn more about used template:
+
+* https://github.com/ncsu-osgeorel/lecture-slides-template
