@@ -1,0 +1,571 @@
+<!doctype html>
+<html lang="en">
+<!-- This is a generated file. Do not edit. -->
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Mapping gradient fields of landform migration using an&nbsp;open science approach</title>
+
+        <meta name="description" content="North Carolina State University, Department of Marine, Earth and Atmospheric Sciences, Graduate Student Seminar">
+        <meta name="author" content="Vaclav Petras">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <style>
+        * {
+            /*font-family: Verdana, Geneva, sans-serif !important;*/
+        }
+        body {
+        /*background-color: #FFF !important;*/
+        /*
+          background-image: url("pictures/elevation-nagshead.gif");
+          background-repeat: no-repeat;
+          background-position: left bottom;*/
+        }
+        .reveal section img {
+            background: transparent;
+            border: 0;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
+        }
+        /* for standalone frame */
+        /*
+        iframe {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        */
+        /* display: inline; background-color: #002B36; padding: 0px; margin: 0px */
+        .rounded-corners {
+            border: 0px solid black;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            -khtml-border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+        a {
+            color: #060 !important;
+        }
+        a:hover {
+            color: #060 !important;
+            text-decoration: underline !important;
+        }
+        h1, h2, h3, h4, h5 {
+            text-transform: none !important;
+            /* word-break: keep-all; text-transform: none; font-size: 200%; line-height: 110%; */
+            color: #060 !important;
+            /* color: #444 !important; */ /* grey from the wab page */
+            font-weight: bold !important;
+            -webkit-hyphens: none !important;
+            -moz-hyphens: none !important;
+            -ms-hyphens: none !important;
+            hyphens: none !important;
+            line-height: 110% !important;
+        }
+        .reveal .progress span {
+            background-color: #060 !important;
+        }
+        /* predefined element positioning */
+        .top {
+            /*position: relative;*/
+            top: 5%;
+            height: 45%; /* is the height even needed? */
+        }
+        .bottom {
+            height: 45%;
+        }
+        .ne {
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            height: 45%;
+            width: 45%;
+        }
+        .nw {
+            position: absolute;
+            top: 5%;
+            left: 5%;
+            height: 45%;
+            width: 45%;
+        }
+        .se {
+            position: absolute;
+            bottom: 5%;
+            right: 5%;
+            height: 45%;
+            width: 45%;
+        }
+        .sw {
+            position: absolute;
+            bottom: 5%;
+            left: 5%;
+            height: 45%;
+            width: 45%;
+        }
+
+        /* classes for sections with predefined elements */
+        /* using !important because, reveal styles are applied afterwards  */
+        .right, .textimg > img, .textimg > video, .textimg > iframe, .imgtext > p, .imgtext > ul, .imgtext > ol, .imgtext > div {
+            float: right;
+            text-align: left;
+            max-width: 47% !important;
+        }
+        .left, .imgtext > img, .imgtext > video, imgtext > iframe, .textimg > p, .textimg > ul, .textimg > ol, .textimg > div {
+            float: left;
+            text-align: left;
+            max-width: 47% !important;
+        }
+        li > ul, li > ol {
+            font-size: 85% !important;
+            line-height: 110% !important;
+        }
+        .small {
+            font-size: smaller !important;
+            color: gray;
+            margin: 0.1em !important;
+        }
+        .credit {
+            font-size: small !important;
+            color: gray;
+            margin: 0.1em !important;
+        }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+<section>
+    <h2>Mapping gradient fields of&nbsp;landform migration</h2>
+    <h3>using an&nbsp;open science approach</h3>
+    <h3 style="margin-top: 0.5em">
+        Vaclav Petras</h3>
+    <p class="small">
+        April 17, 2015<br>
+        Graduate Student Seminar<br>
+        Department of Marine, Earth and Atmospheric Sciences<br>
+        North Carolina State University
+    </p>
+</section>
+<!-- This is a generated file. Do not edit. -->
+<section>
+    <h3>Terrain time series animation</h3>
+    <h4>Jockey’s Ridge dune</h4>
+    <img src="img/jr_anim.gif" width="100%">
+    <!--<ul>
+        <li>understandable but not analytical</li>
+    </ul>-->
+    <p class="small">
+        Created in GRASS GIS Animation Tool
+    </p>
+    <aside class="notes">
+        Current techniques used to study landform migration have limitations.
+        Jockey’s Ridge dune (Nags Head, The Outer Banks, NC) is moving and changing.
+        Animation in 2D and 3D.
+        Not quantitative.
+    </aside>
+</section>
+<section>
+    <h3>Shoreline transects</h3>
+    <img src="img/transects.svg" width="100%">
+    <aside class="notes">
+        We study evolving shorelines using transects.
+        Transects divide shoreline and specify areas where we measure the changes.
+        There are very good algorithms for creating transects, for example in GRASS GIS.
+        However, transects for one set of shorelines might not work when
+        shoreline changes significantly.
+    </aside>
+</section>
+<section>
+    <h3>Connecting contours</h3>
+    <img src="img/connections.svg" width="100%">
+    <aside class="notes">
+        Shorelines and contours are similar.
+        To relate two different shorelines or contours we can draw
+        the connections manually.
+        This is a lot of work and it's impossible to reproduce.
+    </aside>
+</section>
+<section>
+    <h4>Isosurface of a countour (Jockey’s Ridge dune)</h4>
+    <img src="img/jr_stc.png" width="80%">
+    <p class="small">
+        Created in GRASS GIS 3D Viewer (NVIZ)
+    </p>
+    <aside class="notes">
+        Advanced method of exploratory visualization are isosurfaces of space time cube.
+        I will not go into details.
+        I will just say that isosurface represents one contour throughout the years.
+        Although our group is using the technique a lot
+        and the appropriate tools are available in GRASS GIS,
+        the visualization is hard to understand and the tools for it
+        are generally not available.
+    </aside>
+</section>
+<!-- This is a generated file. Do not edit. -->
+<section>
+    <h3>Gradient field of horizontal migration</h3>
+    <img src="img/jr_contours_all.png" width="100%">
+</section>
+<section>
+    <h3>Digital elevation model for tests</h3>
+    <img class="left" src="img/tangible_1.jpg">
+    <img class="right" src="img/tangible_4.jpg">
+    <p class="small">
+        Using Tangible Landscape
+    </p>
+    <aside class="notes">
+        Simple data for development of the algorithm.
+    </aside>
+</section>
+<section>
+    <h3>Contours, year 2001, contour 110m</h3>
+    <img src="img/stc_contours_state_1.png" width="60%">
+</section>
+<section>
+    <h3>Contours, year 2005, contour 110m</h3>
+    <img src="img/stc_contours_state_2.png" width="60%">
+</section>
+<section>
+    <h3>Contours, year 2008, contour 110m</h3>
+    <img src="img/stc_contours_state_3.png" width="60%">
+</section>
+<section>
+    <h3>Contours, year 2009, contour 110m</h3>
+    <img src="img/stc_contours_state_4.png" width="60%">
+</section>
+<section>
+    <h3>Only 110m contours, ignoring rest</h3>
+    <img src="img/stc_contours_plus_state_1_and_4.png" width="60%">
+</section>
+<section>
+    <h3>Assign years as heights</h3>
+    <img src="img/stc_contours_only.png" width="60%">
+</section>
+<section>
+    <h3>Create surface from contours</h3>
+    <img src="img/stc_surface_contours.png" width="60%">
+</section>
+<section>
+    <h3>Looks like terrain but height is time</h3>
+    <img src="img/stc_surface.png" width="60%">
+</section>
+<section>
+    <h3>Gradient field (vector field)</h3>
+    <img src="img/tangible_arrows.png" width="60%">
+</section>
+<section>
+    <h3>Gradient field (vector field) lines</h3>
+    <img src="img/tangible_lines.png" width="60%">
+</section>
+<section>
+    <h2>Comet-like visualization</h2>
+    <video data-autoplay muted loop width="50%">
+         <source src="video/comets.mp4" type="video/mp4">
+    </video>
+    <p class="small">
+        Inspired by Tokyo Wind Speed application by Cameron Beccario.
+        <br>
+        Derived from <code>air.js</code> source code.
+        <br>
+        Uses HTML, CSS, JavaScript and D3.js library.
+    </p>
+</section>
+<section>
+    <h3>Gradient field and rate of change</h3>
+    <img src="img/jr_contours.png" width="70%">
+    <p class="small">Jockey's Ridge dune (north side)</p>
+</section>
+<!-- This is a generated file. Do not edit. -->
+<section>
+    <h2>Advantages</h2>
+    <ul>
+        <li>visual and quantitative technique
+        <li>magnitude and direction of change
+        <li>spatial distribution of rate of change
+        <li>flexible detection of areas with changes
+    </ul>
+    <p>
+    <img src="img/jr_contours.png" width="45%">
+</section>
+<section>
+    <h2>Current and future work</h2>
+    <ul>
+        <li>
+            spatio-temporal interpolation
+            <ul>
+                <li>getting the intermediate contours
+                <li>generating terrain from them
+            </ul>
+        </li>
+        <li>relation of surface curvature to terrain temporal changes
+        <li>combining results for different heights
+    </ul>
+    <img src="img/curvature_profile.png" width="40%">
+    <img src="img/curvature_tangential.png" width="40%">
+</section>
+<section>
+    <h2>Possible applications</h2>
+    <ul class="left">
+        <li>
+            analysis or model calibration
+            <ul>
+                <li>evolving shorelines
+                <li>evolving islands
+                <li>disease spread
+                <li>fire spread
+                <li>glacier melting
+            </ul>
+        </li>
+        <li>
+            terrain analysis
+            <ul>
+                <li>computing rates of change
+                <li>computing rate of change of change
+                <li>terrain terrain interpolation
+            </ul>
+        </li>
+    </ul>
+    <div class="right">
+    <video data-autoplay muted loop width="100%">
+         <source src="video/fire.mp4" type="video/mp4">
+    </video>
+        <p class="small">
+            Simulation of wildfire in Shenandoah<br>
+            Uses GRASS Web Publishing and GRASS Leaflet Publishing
+        </p>
+    </div>
+    <aside class="notes">
+        Application for online publication of animations
+        without a need for server or specialized 3rd party service
+    </aside>
+</section>
+<!-- This is a generated file. Do not edit. -->
+<section>
+    <h2>Motivation for open science</h2>
+    <!--<ul>
+        <li>Sharing</li>
+        <li>Reproducibility</li>
+        <li>Only journal papers not enough</li>
+    </ul>-->
+    <blockquote style="width: 100%; margin: 0.1em;">
+        <p>
+            Software [...] developed as part of novel methods is as important
+            for the method's implementation [...]
+            Such software [...] must be made available to readers upon publication.
+        </p>
+        <p>
+            &mdash;Nature Methods - 4, 189 (2007)
+        </p>
+    </blockquote>
+    <img src="img/open_science.png" width="50%" style="margin: 0.1em;">
+    <p class="credit">Image credit: <a href="https://opensource.com/">opensource.com</a></p>
+    <!--
+    Access to information is crucial for science
+    Azhar, Gulrez Shah. "Access to information is crucial for science." Lancet 377.9775 (2011): 1404.
+    -->
+</section>
+<section>
+    <h2>Motivation for open science</h2>
+    <blockquote>
+        <p>
+            The opposite of ‘open’ isn’t closed. The opposite of open is ‘broken.’
+        </p>
+        <p>
+            &mdash;John Wilbanks
+        </p>
+        <!--cited by Cable Green in The Obviousness of Open Policy -->
+    </blockquote>
+    <img src="img/open_up.png" width="50%">
+    <p class="credit">Image credit: <a href="https://opensource.com/">opensource.com</a></p>
+</section>
+<section>
+    <h2>Availability</h2>
+    <ul>
+        <li>
+            Method and use cases:
+            <ul>
+                <li>Geomorphometry 2015 Conference Proceedings [accepted]
+                <li>open access
+                <li>CC BY-ND<!-- <span class="small">(can be distributed freely)</span>-->
+                <li>can be implemented in any GIS-like software
+            </ul>
+        <li>
+            Software source code:
+            <ul>
+                <li>
+                    <a href="https://github.com/ncsu-osgeorel/spatio-temporal-contour-evolution">
+                        https://github.com/ncsu-osgeorel/spatio-temporal-contour-evolution
+                    </a>
+                </li>
+                <li>GNU GPL <span class="small">(code can be copied and changed)</span></li>
+                <li>
+                    depends only on GRASS GIS
+                    <span class="small">(anybody can have what is needed)</span>
+                </li>
+                <li>GRASS GIS module <span class="small">(convenient to get, ready to use)</span></li>
+                <li>will be moved to official GRASS GIS repository</li>
+            </ul>
+    </ul>
+    <img src="img/cc.svg" width="10%">
+    <img src="img/grass_gis.png" width="10%">
+    <img src="img/open_source.png" width="10%">
+    <img src="img/gnu_gpl.svg" width="17%">
+    <img src="img/github.png" width="10%">
+</section>
+<!-- This is a generated file. Do not edit. -->
+<section>
+    <h2>Thank you</h2>
+    <p class="small">This project was funded by the US Army Research Office, grant W911NF1110146.</p>
+    <p class="small">
+        Everything in the presentation including the presentation itself
+        was created using free, libre and open source software tools.
+    </p>
+</section>
+<!-- This is a generated file. Do not edit. -->
+        </div>  <!-- slides -->
+
+    </div>  <!-- reveal -->
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                // Display controls in the bottom right corner
+                controls: false,
+
+                // Display a presentation progress bar
+                progress: true,
+                
+                center: true,
+                
+                // Display the page number of the current slide
+                slideNumber: false,
+
+                // Enable the slide overview mode
+                overview: true,
+
+                // Turns fragments on and off globally
+                fragments: true,
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                // width: 960,
+                // height: 700,
+                
+                // Factor of the display size that should remain empty around the content
+                margin: 0.05,  // increase?
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.5,
+                maxScale: 5.0,
+
+                theme: Reveal.getQueryHash().theme,  // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Push each slide change to the browser history
+                history: true,
+                // Enable keyboard shortcuts for navigation
+                keyboard: true,
+
+                // Vertical centering of slides
+                center: true,
+
+                // Enables touch navigation on devices with touch input
+                touch: true,
+
+                // Loop the presentation
+                loop: false,
+                // Flags if the presentation is running in an embedded mode,
+                // i.e. contained within a limited portion of the screen
+                embedded: false,
+
+                // Number of milliseconds between automatically proceeding to the
+                // next slide, disabled when set to 0, this value can be overwritten
+                // by using a data-autoslide attribute on your slides
+                autoSlide: 0,
+
+                // Stop auto-sliding after user input
+                autoSlideStoppable: true,
+
+                // Enable slide navigation via mouse wheel
+                mouseWheel: false,
+
+                // Hides the address bar on mobile devices
+                hideAddressBar: true,
+
+                // Opens links in an iframe preview overlay
+                previewLinks: false,
+
+                // Transition speed
+                transitionSpeed: 'default', // default/fast/slow
+
+                // Transition style for full page slide backgrounds
+                backgroundTransition: 'none', // default/none/slide/concave/convex/zoom
+
+                // Number of slides away from the current that are visible
+                viewDistance: 3,
+
+                // Parallax background image
+                //parallaxBackgroundImage: '', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+
+                // Parallax background size
+                //parallaxBackgroundSize: '' // CSS syntax, e.g. "2100px 900px"
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'plugin/math/math.js', async: true }
+                ],
+
+                math: {
+                    mathjax: 'http://cdn.mathjax.org/mathjax/latest/MathJax.js',
+                    config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+                }
+            });
+
+        </script>
+        <script type="text/javascript"
+    src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+    </body>
+</html>
