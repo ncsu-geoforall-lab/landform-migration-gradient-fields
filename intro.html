@@ -1,20 +1,59 @@
 <section>
-    <h3>Terrain time series animation</h3>
-    <h4>Jockey’s Ridge dune</h4>
-    <img src="img/jr_anim.gif" width="100%">
-    <!--<ul>
-        <li>understandable but not analytical</li>
-    </ul>-->
-    <p class="small">
-        Created in GRASS GIS Animation Tool
-    </p>
-    <aside class="notes">
-        Current techniques used to study landform migration have limitations.
-        Jockey’s Ridge dune (Nags Head, The Outer Banks, NC) is moving and changing.
-        Animation in 2D and 3D.
-        Not quantitative.
-    </aside>
+    <h2>Landscape Dynamics</h2>
+Water, wind, gravitation, plants, animals and humans continuously change landscape surface
+Land surface processes are poorly understood and our predictive capabilities are limited 
+Hazard Management decisions are often based on insufficient information
 </section>
+
+<section>
+    <h2>Advances in 3D mapping</h2>
+Lidar and sUAS structure from motion dramatically increased our capacity to 
+map 3D landscapes and assess the change on (almost) continuous basis
+Rapid development of tools for terrain time series analysis
+</section>
+
+<section>
+    <h2>Multivariate terrain time series analysis</h2>
+1D lines - transects, horizontal migration of line features: shorelines, contours, ridges, crests, channels
+2D rasters - per cell statistics, core and envelope, rate of vertical change
+3D rasters - space-time cube contour evolution isosurfaces
+</section>
+
+<section>
+    <h2>DEM time series visualization:</h2>
+    <h3>Jockey's Ridge migration 1974 - 2012</h3>
+    <img height="550" src="img/jrseries.png">
+    <img src="img/animation_without_contour.gif">
+</section>
+
+<section >
+    <h2>Space-Time Cube visualization:</h2>
+    <h3>Jockey's Ridge 16m, 20m contour evolution isosurfaces</h3>
+  <img height="550" src="img/jr16/animation.gif">
+<!--<img src="img/jr18/animation.gif"> -->
+<img height="550" src="img/jr20/animation.gif">
+</section>
+
+<section>
+    <h2 style="margin-bottom: 1em">Interactive 270 degree visualization </h2>
+    Jockey's Ridge visualization in the Hunt Library teaching and visualization laboratory
+<p>
+<br>
+    <img height="450" src="img/JR_Huntl.jpg">
+    <img height="450" src="img/JR_Huntlib_HM1.jpg">
+</section>
+
+<section>
+    <h2>Horizontal migration Analytics</h2>
+Visualization shows that the dune moves mostly south, raster based analysis quantifies vertical change
+Horizontal migration was measured by extracting crests and manually measuring distances along transects
+Result are rates but we also need to know:
+do the rates of migration change with elevation?
+does the direction of migration change over time
+...
+</section>
+
+
 <section>
     <h3>Shoreline transects</h3>
     <img src="img/transects.svg" width="100%">
