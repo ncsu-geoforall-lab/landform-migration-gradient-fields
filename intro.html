@@ -1,80 +1,68 @@
 <section>
-    <h2>Landscape Dynamics</h2>
-Water, wind, gravitation, plants, animals and humans continuously change landscape surface
-Land surface processes are poorly understood and our predictive capabilities are limited 
-Hazard Management decisions are often based on insufficient information
+    <h3>Landscape Dynamics</h3>
+<br>Water, wind, gravitation, plants, animals and humans continuously change landscape surface
+<br>Land surface processes are poorly understood and our predictive capabilities are limited 
+<br>Hazard Management decisions are often based on insufficient information
 </section>
 
 <section>
-    <h2>Advances in 3D mapping</h2>
-Lidar and sUAS structure from motion dramatically increased our capacity to 
+    <h3>Advances in 3D mapping</h3>
+<br>Lidar and sUAS structure from motion dramatically increased our capacity to 
 map 3D landscapes and assess the change on (almost) continuous basis
-Rapid development of tools for terrain time series analysis
+<br>Rapid development of tools for terrain time series analysis
 </section>
 
 <section>
-    <h2>Multivariate terrain time series analysis</h2>
-1D lines - transects, horizontal migration of line features: shorelines, contours, ridges, crests, channels
-2D rasters - per cell statistics, core and envelope, rate of vertical change
-3D rasters - space-time cube contour evolution isosurfaces
+    <h3>Multivariate terrain time series analysis</h3>
+<br>1D lines - transects, horizontal migration of line features: shorelines, contours, ridges, crests, channels
+<br>2D rasters - per cell statistics, core and envelope, rate of vertical change
+<br>3D rasters - space-time cube contour evolution isosurfaces
+    <img height="150" src="img/transects.jpg">
+    <img height="150" src="img/transects.jpg">
+    <img height="150" src="img/transects.jpg">
 </section>
 
 <section>
-    <h2>DEM time series visualization:</h2>
-    <h3>Jockey's Ridge migration 1974 - 2012</h3>
-    <img height="550" src="img/jrseries.png">
-    <img src="img/animation_without_contour.gif">
+    <h3>Visualization: DEM time series</h3>
+Sand dune on NC coast: Jockey's Ridge migration 1974 - 2012
+    <img height="400" src="img/jrseries.png">
+    <img height="400" src="img/animation_without_contour.gif">
+</section>
+
+<section>
+    <h3>Horizontal migration Analysis</h3>
+Horizontal migration was measured by extracting crests and manually measuring distances along transects
+    <img height="400" src="img/rfpfig4crestevolution.jpg">
 </section>
 
 <section >
-    <h2>Space-Time Cube visualization:</h2>
-    <h3>Jockey's Ridge 16m, 20m contour evolution isosurfaces</h3>
-  <img height="550" src="img/jr16/animation.gif">
+    <h3>Visualization: Space-Time Cube</h3>
+Jockey's Ridge 16m, 20m contour evolution isosurfaces <i>z = f (x,y,t) </i>
+  <img height="100" src="img/JR74-12_10mcont2.png">
+  <img height="400" src="img/jr16animation.gif">
 <!--<img src="img/jr18/animation.gif"> -->
-<img height="550" src="img/jr20/animation.gif">
+<img height="400" src="img/jr20animation.gif">
 </section>
 
+<!--
 <section>
     <h2 style="margin-bottom: 1em">Interactive 270 degree visualization </h2>
     Jockey's Ridge visualization in the Hunt Library teaching and visualization laboratory
 <p>
 <br>
     <img height="450" src="img/JR_Huntl.jpg">
-    <img height="450" src="img/JR_Huntlib_HM1.jpg">
 </section>
+-->
 
 <section>
-    <h2>Horizontal migration Analytics</h2>
-Visualization shows that the dune moves mostly south, raster based analysis quantifies vertical change
-Horizontal migration was measured by extracting crests and manually measuring distances along transects
-Result are rates but we also need to know:
-do the rates of migration change with elevation?
-does the direction of migration change over time
-...
+    <h3>Horizontal Migration Analysis in STC</h3>
+do the rates of migration change with elevation?  does the direction of migration change over time
+migration rate at given elevation - migration of contour
+segment time series of zi=c, i=1,...n into non-intersecting segments, then
+<br> t = gc(x,y)
 </section>
 
-
-<section>
-    <h3>Shoreline transects</h3>
-    <img src="img/transects.svg" width="100%">
-    <aside class="notes">
-        We study evolving shorelines using transects.
-        Transects divide shoreline and specify areas where we measure the changes.
-        There are very good algorithms for creating transects, for example in GRASS GIS.
-        However, transects for one set of shorelines might not work when
-        shoreline changes significantly.
-    </aside>
-</section>
-<section>
-    <h3>Connecting contours</h3>
-    <img src="img/connections.svg" width="100%">
-    <aside class="notes">
-        Shorelines and contours are similar.
-        To relate two different shorelines or contours we can draw
-        the connections manually.
-        This is a lot of work and it's impossible to reproduce.
-    </aside>
-</section>
+<!--
 <section>
     <h4>Isosurface of a countour (Jockey’s Ridge dune)</h4>
     <img src="img/jr_stc.png" width="80%">
