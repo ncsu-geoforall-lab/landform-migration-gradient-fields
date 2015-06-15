@@ -6,33 +6,37 @@ Series of DEMs for tests created using Tangible Landscape
 <!--    <p class="small"> Using Tangible Landscape </p>-->
 </section>
 <section>
-    <h3>Contours, year 2001, contour 110m</h3>
-    <img src="img/stc_contours_state_1.png" width="60%">
+    <h3>Contours, year 2001, z = 110m</h3>
+    <img src="img/stc_contours_state_1.png" width="40%">
 </section>
 <section>
-    <h3>Contours, year 2005, contour 110m</h3>
-    <img src="img/stc_contours_state_2.png" width="60%">
+    <h3>Contours, year 2005, z = 110m</h3>
+    <img src="img/stc_contours_state_2.png" width="40%">
 </section>
 <section>
-    <h3>Contours, year 2008, contour 110m</h3>
-    <img src="img/stc_contours_state_3.png" width="60%">
+    <h3>Contours, year 2008, z = 110m</h3>
+    <img src="img/stc_contours_state_3.png" width="40%">
 </section>
 <section>
-    <h3>Contours, year 2009, contour 110m</h3>
-    <img src="img/stc_contours_state_4.png" width="60%">
+    <h3>Contours, year 2009, z = 110m</h3>
+    <img src="img/stc_contours_state_4.png" width="40%">
 </section>
+<!--
 <section>
     <h3>Only 110m contours, ignoring rest</h3>
-    <img src="img/stc_contours_plus_state_1_and_4.png" width="60%">
+    <img src="img/stc_contours_plus_state_1_and_4.png" width="40%">
+</section>
+-->
+<section>
+    <h3>Assign time [year] attribute</h3>
+    <p>Each 110m contour is assigned a time [year] attribute, no partitioning in this example</p>
+    <img src="img/stc_contours_only.png" width="40%">
 </section>
 <section>
-    <h3>Assign years as heights</h3>
-    <img src="img/stc_contours_only.png" width="60%">
-</section>
-<section>
-    <h3>Create surface from contours</h3>
-ADD legend showing that height is time
-    <img src="img/stc_surface.png" width="60%">
+    <h3>Interpolate temporal surface</h3>
+    <p>Temporal surface is interpolated from a set of z=c contours </p>
+ADD legend showing that color is time
+    <img src="img/stc_surface.png" width="40%">
 <!--    <img src="img/stc_surface_contours.png" width="60%">-->
 </section>
 <!--
@@ -43,10 +47,13 @@ ADD legend showing that height is time
 -->
 <section>
     <h3>Gradient lines</h3>
-    <img src="img/tangible_lines.png" width="60%">
+Gradient field can be visualized using arrows or lines. 
+Shows spatial pattern of mass concentration and dispersal over time 
+<p>
+    <img src="img/tangible_lines.png" width="50%">
 </section>
 <section>
-    <h3>Comet-like visualization</h3>
+    <h3>Dynamic visualization of the gradient field</h3>
     <video data-autoplay muted loop width="50%">
          <source src="video/comets.mp4" type="video/mp4">
     </video>
@@ -59,19 +66,47 @@ ADD legend showing that height is time
     </p>
 </section>
 <section>
-    <h3>Real world data application</h3>
+    <h3>Real world data experiment</h3>
     <p class="small">
 Gradient field of horizontal migration at z=10m for Jockey's Ridge dune 
-for years 1974 - 2008 </p>
+for years 1974 - 2008, contour segmentation is needed in this case </p>
 <p>
-    <img src="img/jr_contours_all.png" width="70%">
+    <img src="img/jr_contours_allclip.jpg" width="70%">
 </section>
 <section>
     <h3>Gradient field and rate of migration</h3>
     <p class="small">
-Windward side of Jockey's Ridge dune at different elevations 
+Migration of windward side of Jockey's Ridge dune at different elevations 
 </p>
 <p>
     <img src="img/jr_contours.png" width="60%">
+</section>
+<section>
+    <h3>Second order parameters</h3>
+        Temporal surface curvature: 
+    <ul>
+        <li>in gradient direction: spread acceleration
+        <li>in isoline direction: concentrating or dispersing spread
+    </ul>
+    <img src="img/curvature_profile.png" width="40%">
+    <img src="img/curvature_tangential.png" width="40%">
+</section>
+
+<section>
+    <h3>Other types of temporal fields</h3>
+    <p class="small">
+Fire isochrones (time series of burned area polygons) and simulation result
+</p>
+<p>
+    <img src="img/fire_dataimg.jpg" width="80%">
+</section>
+
+<section>
+    <h3>Fire spread gradient field</h3>
+    <p class="small">
+Fire spread rate and direction and acceleration (curvature in the direction of gradient) 
+</p>
+<p>
+    <img src="img/fire_gradientfield.jpg" width="80%">
 </section>
 
