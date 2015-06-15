@@ -1,60 +1,78 @@
 <section>
     <h3>Landscape Dynamics</h3>
-<br>Water, wind, gravitation, plants, animals and humans continuously change landscape surface
-<br>Land surface processes are poorly understood and our predictive capabilities are limited 
-<br>Hazard Management decisions are often based on insufficient information
+<ul>
+<li>Water, wind, gravitation, plants, animals and humans continuously change landscape surface
+<li>Land surface processes are poorly understood and our predictive capabilities are limited 
+<li>Hazard management decisions are often based on insufficient information
+</ul>
+<p>
+    <img height="150" src="img/dynamiclands.jpg">
 </section>
 
 <section>
     <h3>Advances in 3D mapping</h3>
-<br>Lidar and sUAS structure from motion dramatically increased our capacity to 
+<ul>
+<li>Lidar and sUAS structure from motion: increased capacity to 
 map 3D landscapes and assess the change on (almost) continuous basis
-<br>Rapid development of tools for terrain time series analysis
-
-<br>    <img height="150" src="img/WRAL_liftoff2.png">
+<li>Development of tools for terrain time series analysis
+<li>Data for predictive models development, calibration and validation
+</ul>
+<p>
+    <img height="150" src="img/WRAL_liftoff2.png">
     <img height="150" src="img/ngat2_ortho02m_3dsmall.jpg">
 </section>
 
 <section>
     <h3>Multivariate terrain time series analysis</h3>
-<br>1D lines - transects, horizontal migration of line features: shorelines, contours, ridges, crests, channels
-<br>2D rasters - per cell statistics, core and envelope, rate of vertical change
-<br>3D rasters - space-time cube contour evolution isosurfaces
-    <img height="150" src="img/transects.jpg">
-    <img height="150" src="img/transects.jpg">
-    <img height="150" src="img/transects.jpg">
+<ul>
+<li>1D lines - transects, horizontal migration of line features: shorelines, dune crests, channels
+<li>2D rasters - per cell statistics, core and envelope, rate of vertical change
+<li>3D rasters - space-time cube contour evolution isosurfaces
+</ul>
+<p>
+    <img height="150" src="img/multivaranalysis.jpg">
+<p class="small"> <font size=-1>
+Hardin, E., Mitasova, H., Tateosian, L., Overton, M., 2014, GIS-based Analysis of Coastal Lidar Time-Series, Springer Briefs in Computer Science, Springer, New York, 84 p.
+</font></p>
 </section>
 
 <section>
     <h3>Analysis of migrating landforms</h3> 
-shorelines, dunes, channels, landslides
-<br>beyond 1D lines and transects: capturing and measuring the landform change
+<p>Horizontal migration is often associated with change in landform geometry
+which is hard to measure with standard transects 
 <p class="small">case study: Jockey's Ridge dune
 horizontal migration was measured by extracting crests and manually measuring distances along transects
+resulting in spatially agreggated rates
 </p>
-    <img height="200" src="img/rfpfig4crestevolution.jpg">
+    <img height="200" src="img/JRhorizmigration.jpg">
 </section>
 
 <section>
-    <h3>Visualization: DEM time series</h3>
-Sand dune on NC coast: Jockey's Ridge migration 1974 - 2012
-    <img height="400" src="img/jrseries.png">
+    <h3>DEM time series animation</h3>
+<p>reveals complex change in dune geometry as it migrates:
+<p>Sand dune on NC coast: Jockey's Ridge 1974 - 2012
+<p>    <img height="400" src="img/jrseries.png">
     <img height="400" src="img/animation_without_contour.gif">
+<p class="small">similar famous coastal dunes: Slowinski National Park, Poland, The dune of Pyla in France, Japan
 </section>
 
 <section >
-    <h3>Visualization: Space-Time Cube</h3>
-contour evolution isosurfaces <i>z = f (x,y,t) </i>, z=16m and 20m
+    <h3>Space-Time Cube visualization</h3>
+Evolution at given elevation (contour evolution) isosurfaces <i>z = f (x,y,t) </i>, z=16m and 20m
+<p>
   <img height="400" src="img/jr16animation.gif">
 <img height="400" src="img/jr20animation.gif">
 <!--  <img height="100" src="img/JR74-12_10mcont2.png">-->
 </section>
 
 <section>
-    <h3>Horizontal Migration Analysis in STC</h3>
+    <h3>Gradient field of horizontal migration</h3>
+Quantitative spatially distributed measure of landform migration: magnitude and direction
+<p class="small">
 do the rates of migration change with elevation?  does the direction of migration change over time
 migration rate at given elevation - migration of contour
 segment time series of zi=c, i=1,...n into non-intersecting segments, then
-<br> t = gc(x,y)
+t = gc(x,y)
+</p>
 </section>
 
