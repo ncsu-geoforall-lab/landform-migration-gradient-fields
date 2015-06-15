@@ -3,7 +3,6 @@
 Series of DEMs for tests created using Tangible Landscape
     <img class="left" src="img/tangible_1.jpg">
     <img class="right" src="img/tangible_4.jpg">
-<!--    <p class="small"> Using Tangible Landscape </p>-->
 </section>
 <section>
     <h3>Contours, year 2001, z = 110m</h3>
@@ -28,15 +27,34 @@ Series of DEMs for tests created using Tangible Landscape
 </section>
 -->
 <section>
+    <h3>Migrating 110m contour</h3>
+    <p class="small">Set of 110m contours including core and envelope</p>
+    <img src="img/grad_st1234_core_env_110m.png" width="60%">
+    <p class="small">Envelope: max elevation at each cell (green), Core: min elevation (red)</p>
+</section>
+
+<section>
+    <h3>Define migration areas</h3>
+    <p class="small">Mask external areas outside the range of 110m contour migration</p>
+    <img src="img/grad_st1234_envmask2_110m.png" width="60%">
+</section>`
+
+<section>
+    <h3>Define migration areas</h3>
+    <p class="small">Mask internal areas outside the range of 110m contour migration</p>
+    <img src="img/grad_st1234_coreenvmask2_110m.png" width="60%">
+</section>
+
+<section>
     <h3>Assign time [year] attribute</h3>
-    <p class="small">Each 110m contour is assigned a time [year] attribute, no partitioning in this example</p>
+    <p class="small">Each 110m contour is assigned a time [year] attribute</p>
     <img src="img/grad_st1234_110m.png" width="50%">
 </section>
+
 <section>
     <h3>Interpolate temporal surface</h3>
     <p>Temporal surface is interpolated from a set of z=c contours </p>
-ADD legend showing that color is time
-    <img src="img/stc_surface.png" width="40%">
+    <img src="img/grad_st1234_surfmasked_110m.png" width="60%">
 <!--    <img src="img/stc_surface_contours.png" width="60%">-->
 </section>
 <!--
@@ -77,6 +95,7 @@ for years 1974 - 2008, contour segmentation is needed in this case </p>
     <h3>Gradient field and rate of migration</h3>
     <p class="small">
 Migration of windward side of Jockey's Ridge dune at different elevations 
+and with variable time interval
 </p>
 <p>
     <img src="img/jr_contours.png" width="60%">
