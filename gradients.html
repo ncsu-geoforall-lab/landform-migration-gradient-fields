@@ -20,25 +20,17 @@ Series of DEMs for tests created using Tangible Landscape
     <h3>Contours, year 2009, z = 110m</h3>
     <img src="img/grad_st4_cont.png" width="60%">
 </section>
-<!--
-<section>
-    <h3>Only 110m contours, ignoring rest</h3>
-    <img src="img/stc_contours_plus_state_1_and_4.png" width="40%">
-</section>
--->
 <section>
     <h3>Migrating 110m contour</h3>
     <p class="small">Set of 110m contours including core and envelope</p>
     <img src="img/grad_st1234_core_env_110m.png" width="60%">
     <p class="small">Envelope: max elevation at each cell (green), Core: min elevation (red)</p>
 </section>
-
 <section>
     <h3>Define migration areas</h3>
     <p class="small">Mask external areas outside the range of 110m contour migration</p>
     <img src="img/grad_st1234_envmask2_110m.png" width="60%">
-</section>`
-
+</section>
 <section>
     <h3>Define migration areas</h3>
     <p class="small">Mask internal areas outside the range of 110m contour migration</p>
@@ -55,14 +47,7 @@ Series of DEMs for tests created using Tangible Landscape
     <h3>Interpolate temporal surface</h3>
     <p>Temporal surface is interpolated from a set of z=c contours </p>
     <img src="img/grad_st1234_surfmasked_110m.png" width="50%">
-<!--    <img src="img/stc_surface_contours.png" width="60%">-->
 </section>
-<!--
-<section>
-    <h3>Gradient field (vector field)</h3>
-    <img src="img/tangible_arrows.png" width="60%">
-</section>
--->
 <section>
     <h3>Migration gradient field</h3>
 <p class="small">
@@ -70,7 +55,7 @@ Derived from spatio-temporal surface using partial derivatives of spline functio
 <p>
     <img src="img/gradlines_overyear.png" width="49%">
     <img src="img/gradarrows_overrates.png" width="49%">
-<p class="small"><font size=0>gradient lines over time and vectors over migration rates</font></p>
+<p class="small"><font size=1>gradient lines over time and vectors over migration rates</font></p>
 </section>
 <section>
     <h3>Dynamic visualization of the gradient field</h3>
@@ -78,12 +63,11 @@ Derived from spatio-temporal surface using partial derivatives of spline functio
     <video data-autoplay muted loop width="50%">
          <source src="video/comets.mp4" type="video/mp4">
     </video>
-    <p class="small">
+    <p class="small"><font size=2>
         Inspired by Tokyo Wind Speed application by Cameron Beccario.
-        <br>
         Derived from <code>air.js</code> source code.
-        <br>
         Uses HTML, CSS, JavaScript and D3.js library.
+   </font>
     </p>
 </section>
 <section>
@@ -120,7 +104,7 @@ and with variable time interval
 Fire isochrones (time series of burned area polygons) and simulation result
 </p>
 <p>
-    <img src="img/fire_dataimg.jpg" width="80%">
+    <img src="img/fire_dataimg.jpg" width="90%">
 </section>
 
 <section>
@@ -129,6 +113,6 @@ Fire isochrones (time series of burned area polygons) and simulation result
 Fire spread rate and direction and acceleration (curvature in the direction of gradient) 
 </p>
 <p>
-    <img src="img/fire_gradientfield.jpg" width="80%">
+    <img src="img/fire_gradientfield.jpg" width="90%">
 </section>
 
