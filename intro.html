@@ -31,53 +31,44 @@ map 3D landscapes and assess the change on (almost) continuous basis
 </ul>
 <p>
     <img height="150" src="img/multivaranalysis.jpg">
-<p class="small"> <font size=-1>
+<br> <font size=2>
 Hardin, E., Mitasova, H., Tateosian, L., Overton, M., 2014, GIS-based Analysis of Coastal Lidar Time-Series, Springer Briefs in Computer Science, Springer, New York, 84 p.
-</font></p>
+</font>
 </section>
 
 <section>
     <h3>Analysis of migrating landforms</h3> 
-<p>Horizontal migration is often associated with change in landform geometry
-which is hard to measure with standard transects 
-<p class="small">case study: Jockey's Ridge dune
-horizontal migration was measured by extracting crests and manually measuring distances along transects
-resulting in spatially agreggated rates
-</p>
-    <img height="200" src="img/JRhorizmigration.jpg">
+<p class="small">Horizontal migration is often associated with change in landform geometry
+which is hard to measure with standard transects </p>
+<p>Sand dune on NC coast: Jockey's Ridge 1974 - 2012
+<p>    <img height="400" src="img/jrseries.png">
+    <img height="400" src="img/animation_without_contour.gif">
 </section>
 
 <section>
-    <h3>DEM time series animation</h3>
-<p>Sand dune on NC coast: Jockey's Ridge 1974 - 2012
-<p class="small">reveals complex change in dune geometry as it migrates</p>
-<p>    <img height="400" src="img/jrseries.png">
-    <img height="400" src="img/animation_without_contour.gif">
-<br><font size=2>similar famous coastal dunes: Slowinski National Park, Poland, The dune of Pyla in France, Japan
-</font></p>
-</section>
-
-<section >
-    <h3>Space-Time Cube visualization</h3>
-Contour evolution represented by isosurfaces 
-<br><i>z = f (x,y,t) </i>, z=16m and 20m
-<p>
-  <img height="400" src="img/jr16animation.gif">
-<img height="400" src="img/jr20animation.gif">
-<!--  <img height="100" src="img/JR74-12_10mcont2.png">-->
+    <h3>Transect based analysis</h3>
+<p class="small">Jockey's Ridge dune
+horizontal migration: extracting crests and manually measuring distances along transect,
+to derive spatially agreggated rates
+</p>
+    <img height="400" src="img/JRhorizmigration.jpg">
+<br><font size=2>Similar famous coastal dunes: Slowinski National Park, Poland, Pyla in France, Totori in Japan</font>
 </section>
 
 <section>
     <h3>Gradient field of horizontal migration</h3>
-Quantitative spatially distributed measure of landform migration: magnitude and direction
+<ul>
+<li>Measure the rate and direction of landform migration at any point in space and time
+<li>Study spatial pattern of migration vectors 
+</ul>
+<p>
 <p class="small">
-Answers questions:
-Do the rates of migration change with elevation?  
-Does the direction of migration change over time
-<p>FINISH
-migration rate at given elevation - migration of contour
-segment time series of zi=c, i=1,...n into non-intersecting segments, then
-t = gc(x,y)
+We use the concept of Space-Time cube where for any contour z=const we can define a function
+t=g(x,y)
+where t is the time when this contour is located at the point (x,y).
+For g(.) to be a function, we need to segment time series of contours into 
+non-intersecting segments.
+Then rate of migration is inverse of the gradient magnitude of the function g(x,y).
 </p>
 </section>
 
