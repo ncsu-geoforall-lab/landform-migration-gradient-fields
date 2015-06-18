@@ -5,10 +5,10 @@
     <head>
         <meta charset="utf-8">
 
-        <title>Mapping gradient fields of landform migration using an&nbsp;open science approach</title>
+        <title>Mapping gradient fields of landform migration</title>
 
-        <meta name="description" content="North Carolina State University, Department of Marine, Earth and Atmospheric Sciences, Graduate Student Seminar">
-        <meta name="author" content="Vaclav Petras">
+        <meta name="description" content="North Carolina State University, Center for Geospatial Analytics and Department of Marine, Earth and Atmospheric Sciences">
+        <meta name="author" content="Vaclav Petras, Helena Mitasova, Anna Petrasova">
 
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -165,195 +165,253 @@
             <div class="slides">
 <section>
     <h2>Mapping gradient fields of&nbsp;landform migration</h2>
-    <h3>using an&nbsp;open science approach</h3>
-    <h3 style="margin-top: 0.5em">
-        Vaclav Petras</h3>
+    <h4 style="margin-top: 0.8em">
+        Vaclav Petras, Helena Mitasova, Anna Petrasova</h4>
     <p class="small">
-        April 17, 2015<br>
-        Graduate Student Seminar<br>
+        NCSU Open Source Geospatial Research and Education Laboratory<br>
+        Center for Geospatial Analytics and <br>
         Department of Marine, Earth and Atmospheric Sciences<br>
-        North Carolina State University
+      <b>  North Carolina State University</b>
     </p>
 </section>
 <!-- This is a generated file. Do not edit. -->
 <section>
-    <h3>Terrain time series animation</h3>
-    <h4>Jockey’s Ridge dune</h4>
-    <img src="img/jr_anim.gif" width="100%">
-    <!--<ul>
-        <li>understandable but not analytical</li>
-    </ul>-->
-    <p class="small">
-        Created in GRASS GIS Animation Tool
-    </p>
-    <aside class="notes">
-        Current techniques used to study landform migration have limitations.
-        Jockey’s Ridge dune (Nags Head, The Outer Banks, NC) is moving and changing.
-        Animation in 2D and 3D.
-        Not quantitative.
-    </aside>
+    <h3>Landscape Dynamics</h3>
+<ul>
+<li>Water, wind, gravitation, plants, animals and humans continuously change landscape surface
+<li>Land surface processes are poorly understood and our predictive capabilities are limited 
+<li>Hazard management decisions are often based on insufficient information
+</ul>
+<p>
+    <img height="150" src="img/dynamiclands.jpg">
 </section>
+
 <section>
-    <h3>Shoreline transects</h3>
-    <img src="img/transects.svg" width="100%">
-    <aside class="notes">
-        We study evolving shorelines using transects.
-        Transects divide shoreline and specify areas where we measure the changes.
-        There are very good algorithms for creating transects, for example in GRASS GIS.
-        However, transects for one set of shorelines might not work when
-        shoreline changes significantly.
-    </aside>
+    <h3>Advances in 3D mapping</h3>
+<ul>
+<li>Lidar and sUAS: increased capacity to 
+map 3D landscapes and assess the change on (almost) continuous basis
+<li>Development of tools for terrain time series analysis
+<li>Data for predictive models development, calibration and validation
+to improve hazards management
+</ul>
+<p>
+    <img height="180" src="img/mapping.jpg">
+<!--
+    <img height="150" src="img/WRAL_liftoff2.png">
+    <img height="150" src="img/ngat2_ortho02m_3dsmall.jpg">
+-->
 </section>
+
 <section>
-    <h3>Connecting contours</h3>
-    <img src="img/connections.svg" width="100%">
-    <aside class="notes">
-        Shorelines and contours are similar.
-        To relate two different shorelines or contours we can draw
-        the connections manually.
-        This is a lot of work and it's impossible to reproduce.
-    </aside>
+    <h3>Multivariate terrain time series analysis</h3>
+<ul>
+<li>1D lines - transects, horizontal migration of line features: shorelines, dune crests, channels
+<li>2D rasters - per cell statistics, core and envelope, rate of vertical change
+<li>3D rasters - space-time cube contour evolution isosurfaces
+</ul>
+<p>
+    <img height="150" src="img/multivaranalysis.jpg">
+<br> <font size=2>
+Hardin, E., Mitasova, H., Tateosian, L., Overton, M., 2014, GIS-based Analysis of Coastal Lidar Time-Series, Springer Briefs in Computer Science, Springer, New York, 84 p.
+</font>
 </section>
+
 <section>
-    <h4>Isosurface of a countour (Jockey’s Ridge dune)</h4>
-    <img src="img/jr_stc.png" width="80%">
-    <p class="small">
-        Created in GRASS GIS 3D Viewer (NVIZ)
-    </p>
-    <aside class="notes">
-        Advanced method of exploratory visualization are isosurfaces of space time cube.
-        I will not go into details.
-        I will just say that isosurface represents one contour throughout the years.
-        Although our group is using the technique a lot
-        and the appropriate tools are available in GRASS GIS,
-        the visualization is hard to understand and the tools for it
-        are generally not available.
-    </aside>
+    <h3>Analysis of migrating landforms</h3> 
+<p class="small">Horizontal migration is often associated with change in landform geometry
+which is hard to measure with standard transects </p>
+<p>Sand dune on NC coast: Jockey's Ridge 1974 - 2012
+<p>    <img height="400" src="img/jrseries.png">
+    <img height="400" src="img/animation_without_contour.gif">
 </section>
-<!-- This is a generated file. Do not edit. -->
+
+<section>
+    <h3>Transect based analysis</h3>
+<p class="small">Jockey's Ridge dune
+horizontal migration: extracting crests and manually measuring distances along transect,
+to derive spatially agreggated rates
+</p>
+    <img height="400" src="img/JRhorizmigration.jpg">
+<br><font size=2>Similar famous coastal dunes: Slowinski National Park, Poland, Pyla in France, Totori in Japan</font>
+</section>
+
 <section>
     <h3>Gradient field of horizontal migration</h3>
-    <img src="img/jr_contours_all.png" width="100%">
+<ul>
+<li>Measure the rate and direction of landform migration at any point in space and time
+<li>Study spatial pattern of migration vectors 
+</ul>
+<p>
+<p class="small">
+We use the concept of Space-Time Cube where for any contour <i>z=const</i> we can define a function
+<i>t=g(x,y)</i>
+where <i>t</i> is the time when this contour is located at the point <i>(x,y)</i>.
+For <i>g(.)</i> to be a function, we need to segment time series of contours into 
+non-intersecting segments.
+Then rate of migration is inverse of the gradient magnitude of the function <i>g(x,y)</i>.
+</p>
 </section>
+
+<!-- This is a generated file. Do not edit. -->
 <section>
-    <h3>Digital elevation model for tests</h3>
+    <h3>Simple experiment</h3>
+Series of DEMs for tests created using Tangible Landscape
     <img class="left" src="img/tangible_1.jpg">
     <img class="right" src="img/tangible_4.jpg">
-    <p class="small">
-        Using Tangible Landscape
-    </p>
-    <aside class="notes">
-        Simple data for development of the algorithm.
-    </aside>
 </section>
 <section>
-    <h3>Contours, year 2001, contour 110m</h3>
-    <img src="img/stc_contours_state_1.png" width="60%">
+    <h3>Contours, year 2001, z = 110m</h3>
+    <img src="img/grad_st1_cont.png" width="60%">
 </section>
 <section>
-    <h3>Contours, year 2005, contour 110m</h3>
-    <img src="img/stc_contours_state_2.png" width="60%">
+    <h3>Contours, year 2005, z = 110m</h3>
+    <img src="img/grad_st2_cont.png" width="60%">
 </section>
 <section>
-    <h3>Contours, year 2008, contour 110m</h3>
-    <img src="img/stc_contours_state_3.png" width="60%">
+    <h3>Contours, year 2008, z = 110m</h3>
+    <img src="img/grad_st3_cont.png" width="60%">
 </section>
 <section>
-    <h3>Contours, year 2009, contour 110m</h3>
-    <img src="img/stc_contours_state_4.png" width="60%">
+    <h3>Contours, year 2009, z = 110m</h3>
+    <img src="img/grad_st4_cont.png" width="60%">
 </section>
 <section>
-    <h3>Only 110m contours, ignoring rest</h3>
-    <img src="img/stc_contours_plus_state_1_and_4.png" width="60%">
+    <h3>Migrating 110m contour</h3>
+    <p class="small">Set of 110m contours including the ones derived from core and envelope</p>
+    <img src="img/grad_st1234_core_env_110m.png" width="60%">
+    <p class="small">Envelope: max elevation at each cell (green), Core: min elevation (red)</p>
 </section>
 <section>
-    <h3>Assign years as heights</h3>
-    <img src="img/stc_contours_only.png" width="60%">
+    <h3>Define migration areas</h3>
+    <p class="small">Mask external areas outside the range of 110m contour migration</p>
+    <img src="img/grad_st1234_envmask2_110m.png" width="60%">
 </section>
 <section>
-    <h3>Create surface from contours</h3>
-    <img src="img/stc_surface_contours.png" width="60%">
+    <h3>Define migration areas</h3>
+    <p class="small">Mask internal areas outside the range of 110m contour migration</p>
+    <img src="img/grad_st1234_coreenvmask2_110m.png" width="60%">
 </section>
 <section>
-    <h3>Looks like terrain but height is time</h3>
-    <img src="img/stc_surface.png" width="60%">
+    <h3>Assign time [year] attribute</h3>
+    <p class="small">Each 110m contour is assigned a time [year] attribute</p>
+    <img src="img/grad_st1234_110m.png" width="50%">
 </section>
 <section>
-    <h3>Gradient field (vector field)</h3>
-    <img src="img/tangible_arrows.png" width="60%">
+    <h3>Interpolate temporal surface</h3>
+    <p class="small" >Temporal surface is interpolated from a time series of 110m contours </p>
+    <img src="img/grad_st1234_surfmasked_110m.png" width="50%">
 </section>
 <section>
-    <h3>Gradient field (vector field) lines</h3>
-    <img src="img/tangible_lines.png" width="60%">
+    <h3>Migration gradient field</h3>
+<p class="small"> Derived from spatio-temporal surface using derivatives of spline function </p>
+<p>
+    <img src="img/gradlines_overyear.png" width="49%">
+    <img src="img/gradarrows_overrates.png" width="49%">
+<p class="small">gradient lines over time and vectors over migration rates
 </section>
 <section>
-    <h2>Comet-like visualization</h2>
+    <h3>Dynamic visualization of the gradient field</h3>
+<p class="small">Shows spatial pattern of mass concentration and dispersal over time </p>
     <video data-autoplay muted loop width="50%">
          <source src="video/comets.mp4" type="video/mp4">
     </video>
-    <p class="small">
+    <p class="small"><font size=2>
         Inspired by Tokyo Wind Speed application by Cameron Beccario.
-        <br>
         Derived from <code>air.js</code> source code.
-        <br>
         Uses HTML, CSS, JavaScript and D3.js library.
+   </font>
     </p>
 </section>
 <section>
-    <h3>Gradient field and rate of change</h3>
-    <img src="img/jr_contours.png" width="70%">
-    <p class="small">Jockey's Ridge dune (north side)</p>
-</section>
-<!-- This is a generated file. Do not edit. -->
-<section>
-    <h2>Advantages</h2>
-    <ul>
-        <li>visual and quantitative technique
-        <li>magnitude and direction of change
-        <li>spatial distribution of rate of change
-        <li>flexible detection of areas with changes
-    </ul>
-    <p>
-    <img src="img/jr_contours.png" width="45%">
+    <h3>Real world data experiment</h3>
+    <p class="small">
+Gradient field of horizontal migration at z=12m for Jockey's Ridge dune 
+for years 1974, 1995, 2001, 2008, 2012, contour segmentation is needed</p>
+<p>
+    <img src="img/jr_contours_allclip.jpg" width="70%">
 </section>
 <section>
-    <h2>Current and future work</h2>
+    <h3>Gradient field and rate of migration</h3>
+    <p class="small">
+Migration of windward side of Jockey's Ridge dune at different elevations 
+</p>
+<p>
+    <img src="img/jr-stc-contours.png" width="70%">
+</section>
+<!--
+<section>
+    <h3>Second order parameters</h3>
+        Temporal surface curvature: 
     <ul>
-        <li>
-            spatio-temporal interpolation
-            <ul>
-                <li>getting the intermediate contours
-                <li>generating terrain from them
-            </ul>
-        </li>
-        <li>relation of surface curvature to terrain temporal changes
-        <li>combining results for different heights
+        <li>in gradient direction: spread acceleration
+        <li>in isoline direction: concentrating or dispersing spread
     </ul>
     <img src="img/curvature_profile.png" width="40%">
     <img src="img/curvature_tangential.png" width="40%">
 </section>
+-->
 <section>
-    <h2>Possible applications</h2>
-    <ul class="left">
+    <h3>Other types of temporal fields</h3>
+    <p class="small">
+Fire isochrones (time series of burned area polygons) and simulation 
+</p>
+<p>
+    <img src="img/fire_dataimg.jpg" width="90%">
+</section>
+
+<section>
+    <h3>Fire spread gradient field</h3>
+    <p class="small">
+Fire spread rate and direction and acceleration <br>
+(curvature in the direction of gradient) 
+</p>
+<p>
+    <img src="img/fire_gradientfield.jpg" width="90%">
+</section>
+
+<!-- This is a generated file. Do not edit. -->
+<section>
+    <h3>Generalization for complex dynamics</h3>
+<ul>
+        <li>integrating the fields across several elevation contours
+        <li>using implicit function <i>f(x,y,t)=const</i> to analyze countour evolution isosurface
+        <li>derive 3D gradient lines of fastest change using trivariate splines
+    </ul>
+</section>
+
+<section >
+    <h3>Space-Time Cube visualization</h3>
+Contour evolution represented by isosurfaces 
+<br><i>z = f (x,y,t) </i>, z=16m and 20m
+<p>
+  <img height="400" src="img/jr16animation.gif">
+<img height="400" src="img/jr20animation.gif">
+<!--  <img height="100" src="img/JR74-12_10mcont2.png">-->
+</section>
+
+<section>
+    <h3>Conclusion</h3>
+    <ul>
+        <li>visual and quantitative technique
+        <li>magnitude and direction of change
+        <li>spatial distribution of rate of change
+        <li>detection of anomalies
         <li>
-            analysis or model calibration
+            analysis of 3D monitoring data or model calibration
             <ul>
-                <li>evolving shorelines
-                <li>evolving islands
+                <li>evolving shorelines and islands
                 <li>disease spread
-                <li>fire spread
                 <li>glacier melting
             </ul>
         </li>
         <li>
-            terrain analysis
-            <ul>
-                <li>computing rates of change
-                <li>computing rate of change of change
-                <li>terrain terrain interpolation
-            </ul>
+            spatio-temporal interpolation of migrating landforms
         </li>
     </ul>
+
+</section>
+<!--
     <div class="right">
     <video data-autoplay muted loop width="100%">
          <source src="video/fire.mp4" type="video/mp4">
@@ -368,14 +426,17 @@
         without a need for server or specialized 3rd party service
     </aside>
 </section>
+-->
+
 <!-- This is a generated file. Do not edit. -->
+<!--
 <section>
     <h2>Motivation for open science</h2>
-    <!--<ul>
+    <ul>
         <li>Sharing</li>
         <li>Reproducibility</li>
         <li>Only journal papers not enough</li>
-    </ul>-->
+    </ul>
     <blockquote style="width: 100%; margin: 0.1em;">
         <p>
             Software [...] developed as part of novel methods is as important
@@ -388,10 +449,8 @@
     </blockquote>
     <img src="img/open_science.png" width="50%" style="margin: 0.1em;">
     <p class="credit">Image credit: <a href="https://opensource.com/">opensource.com</a></p>
-    <!--
     Access to information is crucial for science
     Azhar, Gulrez Shah. "Access to information is crucial for science." Lancet 377.9775 (2011): 1404.
-    -->
 </section>
 <section>
     <h2>Motivation for open science</h2>
@@ -402,22 +461,23 @@
         <p>
             &mdash;John Wilbanks
         </p>
-        <!--cited by Cable Green in The Obviousness of Open Policy -->
+        cited by Cable Green in The Obviousness of Open Policy 
     </blockquote>
     <img src="img/open_up.png" width="50%">
     <p class="credit">Image credit: <a href="https://opensource.com/">opensource.com</a></p>
 </section>
+-->
 <section>
-    <h2>Availability</h2>
+    <h3>Availability</h3>
     <ul>
         <li>
             Method and use cases:
             <ul>
-                <li>Geomorphometry 2015 Conference Proceedings [accepted]
-                <li>open access
-                <li>CC BY-ND<!-- <span class="small">(can be distributed freely)</span>-->
+                <li>Geomorphometry 2015 Conference Proceedings 
+                <li>open access and CC BY-ND
                 <li>can be implemented in any GIS-like software
             </ul>
+<p>
         <li>
             Software source code:
             <ul>
@@ -432,7 +492,7 @@
                     <span class="small">(anybody can have what is needed)</span>
                 </li>
                 <li>GRASS GIS module <span class="small">(convenient to get, ready to use)</span></li>
-                <li>will be moved to official GRASS GIS repository</li>
+               <!-- <li>will be moved to official GRASS GIS repository</li>-->
             </ul>
     </ul>
     <img src="img/cc.svg" width="10%">
@@ -443,12 +503,15 @@
 </section>
 <!-- This is a generated file. Do not edit. -->
 <section>
-    <h2>Thank you</h2>
+    <h3>Thank you</h3>
     <p class="small">This project was funded by the US Army Research Office, grant W911NF1110146.</p>
     <p class="small">
         Everything in the presentation including the presentation itself
         was created using free, libre and open source software tools.
     </p>
+<p>
+    <img src="img/jockeys_ridge_2s.jpg" width="45%">
+    <img src="img/JR_Huntl.jpg" width="45%">
 </section>
 <!-- This is a generated file. Do not edit. -->
         </div>  <!-- slides -->
