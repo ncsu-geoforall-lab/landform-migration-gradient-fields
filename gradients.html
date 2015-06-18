@@ -22,7 +22,7 @@ Series of DEMs for tests created using Tangible Landscape
 </section>
 <section>
     <h3>Migrating 110m contour</h3>
-    <p class="small">Set of 110m contours including core and envelope</p>
+    <p class="small">Set of 110m contours including the ones derived from core and envelope</p>
     <img src="img/grad_st1234_core_env_110m.png" width="60%">
     <p class="small">Envelope: max elevation at each cell (green), Core: min elevation (red)</p>
 </section>
@@ -36,26 +36,23 @@ Series of DEMs for tests created using Tangible Landscape
     <p class="small">Mask internal areas outside the range of 110m contour migration</p>
     <img src="img/grad_st1234_coreenvmask2_110m.png" width="60%">
 </section>
-
 <section>
     <h3>Assign time [year] attribute</h3>
     <p class="small">Each 110m contour is assigned a time [year] attribute</p>
     <img src="img/grad_st1234_110m.png" width="50%">
 </section>
-
 <section>
     <h3>Interpolate temporal surface</h3>
-    <p>Temporal surface is interpolated from a set of z=c contours </p>
+    <p class="small" >Temporal surface is interpolated from a time series of 110m contours </p>
     <img src="img/grad_st1234_surfmasked_110m.png" width="50%">
 </section>
 <section>
     <h3>Migration gradient field</h3>
-<p class="small">
-Derived from spatio-temporal surface using derivatives of spline function 
+<p class="small"> Derived from spatio-temporal surface using derivatives of spline function </p>
 <p>
     <img src="img/gradlines_overyear.png" width="49%">
     <img src="img/gradarrows_overrates.png" width="49%">
-<br><font size=2>gradient lines over time and vectors over migration rates</font>
+<p class="small">gradient lines over time and vectors over migration rates
 </section>
 <section>
     <h3>Dynamic visualization of the gradient field</h3>
@@ -73,8 +70,8 @@ Derived from spatio-temporal surface using derivatives of spline function
 <section>
     <h3>Real world data experiment</h3>
     <p class="small">
-Gradient field of horizontal migration at z=10m for Jockey's Ridge dune 
-for years 1974 - 2008, contour segmentation is needed in this case </p>
+Gradient field of horizontal migration at z=12m for Jockey's Ridge dune 
+for years 1974, 1995, 2001, 2008, 2012, contour segmentation is needed</p>
 <p>
     <img src="img/jr_contours_allclip.jpg" width="70%">
 </section>
@@ -101,7 +98,7 @@ Migration of windward side of Jockey's Ridge dune at different elevations
 <section>
     <h3>Other types of temporal fields</h3>
     <p class="small">
-Fire isochrones (time series of burned area polygons) and simulation result
+Fire isochrones (time series of burned area polygons) and simulation 
 </p>
 <p>
     <img src="img/fire_dataimg.jpg" width="90%">
@@ -110,7 +107,8 @@ Fire isochrones (time series of burned area polygons) and simulation result
 <section>
     <h3>Fire spread gradient field</h3>
     <p class="small">
-Fire spread rate and direction and acceleration (curvature in the direction of gradient) 
+Fire spread rate and direction and acceleration <br>
+(curvature in the direction of gradient) 
 </p>
 <p>
     <img src="img/fire_gradientfield.jpg" width="90%">
