@@ -18,7 +18,7 @@ Presentation online and at conferences
 
 Slides online:
 
-* http://ncsu-osgeorel.github.io/landform-migration-gradient-fields/
+* http://ncsu-geoforall-lab.github.io/landform-migration-gradient-fields/
 
 Events where some version of slides was used or will be used:
 
@@ -29,7 +29,7 @@ Events where some version of slides was used or will be used:
 Presented software
 ------------------
 
-* https://github.com/ncsu-osgeorel/spatio-temporal-contour-evolution
+* https://github.com/ncsu-geoforall-lab/spatio-temporal-contour-evolution
 
 
 Building the slides
@@ -83,4 +83,4 @@ Presentation is using on Reveal.js HTML Presentation Framework.
 
 Learn more about used template:
 
-* https://github.com/ncsu-osgeorel/lecture-slides-template
+* https://github.com/ncsu-geoforall-lab/lecture-slides-template
